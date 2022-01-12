@@ -38,6 +38,7 @@ public class AccountController {
 		model.put("account", account);
 		return "admin/new_account";
 	}
+
 	
 	@RequestMapping("/manager/account/edit")
 	public ModelAndView editCustomerForm(@RequestParam long id) {

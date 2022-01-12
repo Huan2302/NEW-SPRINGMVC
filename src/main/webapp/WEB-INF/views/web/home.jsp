@@ -195,7 +195,7 @@
     </script>
     <script src="<c:url value='/template/web/lib/popper/popper.min.js'/>"></script>
     <script src="<c:url value='/template/web/lib/bootstrap/js/bootstrap.min.js'/>"></script>
-    <script type="text/javascript" src="<c:url value='/template/web/lib/chart/shieldui-all.min.js'/>"></script>
+<%--    <script type="text/javascript" src="<c:url value='/template/web/lib/chart/shieldui-all.min.js'/>"></script>--%>
     <script src="<c:url value='/template/web/lib/slick/js/slick.min.js'/>"></script>
     <script src="<c:url value='/template/web/js/chart.js'/>"></script>
     <script src="<c:url value='/template/web/js/style.js'/>"></script>

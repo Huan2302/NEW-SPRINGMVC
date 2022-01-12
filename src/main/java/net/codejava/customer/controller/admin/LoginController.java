@@ -21,7 +21,7 @@ public class LoginController {
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String login(HttpSession session, ModelMap model,
 			@RequestParam(value = "error", required = false) String error) {
-		session.setAttribute("account", null);
+		session.setAttribute("user", null);
 		try {
 			if (error.equals("true")) {
 				model.put("error", "Tên đăng nhập hoặc mật khẩu không đúng !!");

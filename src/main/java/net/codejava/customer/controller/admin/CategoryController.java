@@ -22,7 +22,8 @@ import net.codejava.customer.entity.Category;
 import net.codejava.customer.service.AccountService;
 import net.codejava.customer.service.CategoryService;
 
-@Controller(value = "categoryControllerOfAdmin")
+//@Controller(value = "categoryControllerOfAdmin")
+@Controller
 public class CategoryController {
 
 	@Autowired
@@ -54,7 +55,7 @@ public class CategoryController {
 	@RequestMapping(value = "/manager/category/new", method = RequestMethod.POST)
 	public String saveAccount(HttpSession session, @ModelAttribute("category") Category category, HttpServletResponse response) {
 		response.setCharacterEncoding("utf-8");
-		if(category.getId() == null) {
+
 			Account account = (Account) session.getAttribute("account");
 			if(account != null) {
 				category.setCreateBy(account.getFullname());
@@ -63,7 +64,7 @@ public class CategoryController {
 			}else {
 				return "redirect:/login";
 			}
-		}
+
 		return "redirect:/manager/category";
 	}
 	

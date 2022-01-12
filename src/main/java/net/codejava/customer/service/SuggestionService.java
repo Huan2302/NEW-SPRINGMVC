@@ -1,14 +1,11 @@
 package net.codejava.customer.service;
 
-import java.util.List;
 
+import net.codejava.customer.entity.Suggestion;
+import net.codejava.customer.repository.SuggestionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import net.codejava.customer.entity.Article;
-import net.codejava.customer.entity.Suggestion;
-import net.codejava.customer.repository.SuggestionRepository;
 
 @Service
 @Transactional

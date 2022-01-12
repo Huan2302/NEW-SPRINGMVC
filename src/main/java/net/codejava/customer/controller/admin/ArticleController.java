@@ -63,6 +63,7 @@ public class ArticleController {
 	public ModelAndView editArticleForm(@RequestParam long id) { 
 		ModelAndView mav = new ModelAndView("admin/edit_article");
 		Article article = articleService.get(id);
+		mav.addObject("listCategory", categoryService.listAll());
 		mav.addObject("article", article);	
 		return mav;
 	}
@@ -70,7 +71,7 @@ public class ArticleController {
 	@RequestMapping(value = "/manager/article/new", method = RequestMethod.POST)
 	public String saveArticle(HttpSession session, @ModelAttribute("article") Article article, @RequestParam("file") MultipartFile multipartFile) {
 		try {
-			if(article.getId() == null) {
+
 				Account account = (Account) session.getAttribute("account");
 				if(account != null) { 
 					if (!multipartFile.isEmpty()) {
@@ -78,9 +79,9 @@ public class ArticleController {
 						String absolutePath = context.getRealPath("/WebConent/photo/");
 	
 						Path uploadPath = Paths.get(absolutePath);
-						System.out.println("hello" + uploadPath);
+//						System.out.println("hello" + uploadPath);
 						File file = new File("/Users/admin/Desktop/DoAn/BaoMoi/src/main/webapp/template/photo", fileName);
-						System.out.println("hello1" + file);
+//						System.out.println("hello1" + file);
 						multipartFile.transferTo(file); 
 						article.setPhoto(fileName);
 					}
@@ -95,7 +96,7 @@ public class ArticleController {
 				}else {
 					return "redirect:/login";
 				}
-			}
+
 		} catch (Exception e) {
 			System.out.println("lỗi:====================" + e);
 		}
